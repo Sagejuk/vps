@@ -13,7 +13,7 @@ jobs:
     - name: Criar Nova Máquina
       run: |
         choco install ngrok
-        ngrok config add-authtoken 2dEyxB5ml6BSMTSE2IFuVfH5XAm_5jeqegdgEtwXWVuygVKKx
+        ngrok config add-authtoken 2j2v4SK1N4XiIV4bDjCSoh7x8uE_3DuzFYGUUcwN9tkpM2EHd
         net user golden P4ssw0rd /add
         net localgroup Administrators golden /add
         ngrok tcp 3389
