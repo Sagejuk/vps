@@ -1,0 +1,19 @@
+name: VPS Free (Windows Ubuntu Latest)
+
+on:
+  schedule:
+    - cron: '0 */5 * * *'  # Executar a cada 5 horas 
+  workflow_dispatch:
+
+jobs:
+  criar-maquina:
+    runs-on: windows-latest
+
+    steps:
+    - name: Criar Nova Máquina
+      run: |
+        choco install ngrok
+        ngrok config add-authtoken 2j2v4SK1N4XiIV4bDjCSoh7x8uE_3DuzFYGUUcwN9tkpM2EHd
+        net user golden P4ssw0rd /add
+        net localgroup Administrators golden /add
+        ngrok tcp 3388
